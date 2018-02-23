@@ -6,25 +6,44 @@
 #endif
 
 #include<iostream>
+#include<string>
 
-int main()
+int main(int argc, char* argv[])
 {
 int result=0;
 double pi=3.14159;
 
 
+double angle =45;
+if(argc>1)
+{
+angle=std::stod(argv[1]);
+}
+double anle_rad=angle*pi/180.0;
+
+
+
 #ifdef USE_TRIGONOMETRY_DEGREE
-result = cos(45.0);
+std::cout<<degreemath::sin(angle)<<std::endl;
+//std::cout<<degreemath::cos(angle)<<std::endl;
+//std::cout<<degreemath::tan(angle)<<std::endl;
+//std::cout<<degreemath::ctg(angle)<<std::endl;
 #else
-result = cos(pi/4.0);
+std::cout<<degreemath::sin(angle_rad)<<std::endl;
+std::cout<<degreemath::cos(angle_rad)<<std::endl;
+std::cout<<degreemath::tan(angle_rad)<<std::endl;
+std::cout<<degreemath::ctg(angle_rad)<<std::endl;
+
 #endif
 
 /*std::cout<<degreemath::sin(90)<<std::endl;
 std::cout<<degreemath::cos(90)<<std::endl;
 std::cout<<degreemath::tan(90)<<std::endl;
 std::cout<<degreemath::ctg(90)<<std::endl;
-*/
-std::cout<<result<<std::endl;
 
+
+*/
+//std::cout<<result<<std::endl;
+system("pause");
 
 }
