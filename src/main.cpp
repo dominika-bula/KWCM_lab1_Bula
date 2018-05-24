@@ -1,49 +1,47 @@
 #include <LaborkaConfig.h>
 #ifdef  USE_TRIGONOMETRY_DEGREE
-#include "trygonometria.h"
+	#include "trygonometria.h"
 #else 
-#include<cmath>
+	#include<cmath>
 #endif
 
 #include<iostream>
 #include<string>
 
-int main(int argc, char* argv[])
+int main()
 {
-int result=0;
-double pi=3.14159;
+double result_sin=0;
+double result_cos=0;
+double result_tan=0;
+double result_ctg=0;
 
 
-double angle =45;
-if(argc>1)
-{
-angle=std::stod(argv[1]);
-}
-double anle_rad=angle*pi/180.0;
+result_sin=degreemath::sin(45.0);
+std::cout<<"Sin"<<std::endl;
+std::cout<< result_sin <<std::endl;
 
+result_cos=degreemath::cos(45.0);
+std::cout<<"Cos"<<std::endl;
+std::cout<< result_cos <<std::endl;
 
+result_tan=degreemath::tan(45.0);
+std::cout<<"tan"<<std::endl;
+std::cout<< result_tan <<std::endl;
+
+result_ctg=degreemath::ctg(45.0);
+std::cout<<"Ctg"<<std::endl;
+std::cout<< result_ctg <<std::endl;
 
 #ifdef USE_TRIGONOMETRY_DEGREE
-std::cout<<degreemath::sin(angle)<<std::endl;
-//std::cout<<degreemath::cos(angle)<<std::endl;
-//std::cout<<degreemath::tan(angle)<<std::endl;
-//std::cout<<degreemath::ctg(angle)<<std::endl;
-#else
-std::cout<<degreemath::sin(angle_rad)<<std::endl;
-std::cout<<degreemath::cos(angle_rad)<<std::endl;
-std::cout<<degreemath::tan(angle_rad)<<std::endl;
-std::cout<<degreemath::ctg(angle_rad)<<std::endl;
+double result_ostateczny = 0.0;
+
+	#ifdef USE_TRIGONOMETRY_DEGREE
+	result_ostateczny = degreemath::cos(45.0);
+	std::cout<< result_ostateczny <<std::endl;
+	#else
+    result_ostateczny = std::cos(45.0);
+	std::cout<< result_ostateczny <<std::endl;
 
 #endif
-
-/*std::cout<<degreemath::sin(90)<<std::endl;
-std::cout<<degreemath::cos(90)<<std::endl;
-std::cout<<degreemath::tan(90)<<std::endl;
-std::cout<<degreemath::ctg(90)<<std::endl;
-
-
-*/
-//std::cout<<result<<std::endl;
-system("pause");
 
 }

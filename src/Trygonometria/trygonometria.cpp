@@ -1,5 +1,6 @@
 #include "trygonometria.h"
 #include<cmath>
+
 double degreemath::sin(double degree) {
 double radian = degree*3.14159/180.0;
 return std::sin(radian);

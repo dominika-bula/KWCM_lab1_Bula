@@ -1,4 +1,5 @@
-namespace degreemath{
+namespace degreemath
+{
 	double sin(double degree);
 	double cos(double degree);
 	double ctg(double degree);
